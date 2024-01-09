@@ -89,3 +89,28 @@ gsap.to('.char', {
     visibility: 'visible', 
 });
 
+
+AOS.init({
+    once: true, // Initialize AOS only once
+  });
+
+  
+    $(document).ready(function () {
+        var previousScroll = 0;
+
+        $(window).scroll(function () {
+            var currentScroll = $(this).scrollTop();
+
+            // Check the scroll direction
+            if (currentScroll > previousScroll) {
+                // Scrolling down
+                $(".navbar").addClass("hidden");
+            } else {
+                // Scrolling up
+                $(".navbar").removeClass("hidden");
+            }
+
+            previousScroll = currentScroll;
+        });
+    });
+
